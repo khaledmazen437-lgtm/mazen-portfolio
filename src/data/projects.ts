@@ -1,0 +1,215 @@
+export type Project = {
+  id: string;
+  title: string;
+  cover: string;
+  position: { x: number; y: number };
+  mobilePosition?: { x: number; y: number };
+  size?: number;
+  year?: string;
+  description?: string;
+  media: { type: 'image' | 'video'; src: string; alt?: string }[];
+  link?: string;
+  demoLink?: string;
+  language?: string;
+  category?: string;
+};
+
+export const projects: Project[] = [
+  {
+    id: 'production-apps',
+    title: 'LIVE PRODUCTION SITES',
+    cover: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=85',
+    position: { x: 6, y: 12 },
+    size: 96,
+    year: '2026',
+    language: 'Production Cloud',
+    category: 'Live Deployed Apps',
+    description: 'مواقع ومشاريع فعلية لايف مستضافة على السيرفر (mhdteck.store): منصة دليل التعليمية والشات، متجر MHD للأزياء، وبوابة وكالة MHD التقنية.',
+    link: 'https://mhdteck.store/mhd/index.php',
+    demoLink: 'https://mhdteck.store/mhd/index.php',
+    media: [
+      { type: 'image', src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85', alt: 'Dalil Study Platform Live' },
+      { type: 'image', src: '/1.jpg', alt: 'MHD Fashion Store Live' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85', alt: 'MHD Agency Portal Live' },
+    ],
+  },
+  {
+    id: 'mhd-fashion-store',
+    title: 'MHD FASHION STORE',
+    cover: '/1.jpg',
+    position: { x: 34, y: 10 },
+    size: 94,
+    year: '2025',
+    language: 'HTML5 / CSS3 / JavaScript',
+    category: 'E-Commerce Production',
+    description: 'متجر إلكتروني متكامل للأزياء والملابس مع سلة تسوق تفاعلية وفلترة للمنتجات وصفحة إتمام الطلب ومظهر عصري متجاوب.',
+    link: 'https://github.com/khaledmazen437-lgtm/mhd-fashion-store',
+    demoLink: 'https://mhdteck.store/store/store.php',
+    media: [
+      { type: 'image', src: '/1.jpg', alt: 'MHD Fashion Storefront' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1200&q=85', alt: 'Checkout & cart flow' },
+    ],
+  },
+  {
+    id: 'dalil-study-platform',
+    title: 'DALIL STUDY PLATFORM',
+    cover: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=85',
+    position: { x: 62, y: 12 },
+    size: 92,
+    year: '2025',
+    language: 'PHP 8 / MySQL / PWA / WebSockets',
+    category: 'Educational & Live Chat',
+    description: 'منصة دليل التعليمية والشات التفاعلي المباشر — تواصل فوري بين الطلاب والمعلمين، قنوات دراسية، لوحة تحكم إدارية متكاملة، ودعم PWA للتثبيت والتصفح دون إنترنت.',
+    link: 'https://github.com/khaledmazen437-lgtm/dalil-study-platform',
+    demoLink: 'https://mhdteck.store/dalil/',
+    media: [
+      { type: 'image', src: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=85', alt: 'Dalil chat channels' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85', alt: 'Educational study board' },
+    ],
+  },
+  {
+    id: 'mhd-agency-website',
+    title: 'MHD AGENCY PORTAL',
+    cover: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=85',
+    position: { x: 86, y: 14 },
+    size: 90,
+    year: '2025',
+    language: 'JavaScript / Modern CSS',
+    category: 'Agency Digital Showcase',
+    description: 'الموقع الرسمي لوكالة MHD للحلول البرمجية والتحول الرقمي، استعراض المشاريع والخدمات، وحزم التطوير المخصصة للأفراد والشركات.',
+    link: 'https://github.com/khaledmazen437-lgtm/mhd-agency-website',
+    demoLink: 'https://mhdteck.store/mhd/index.php',
+    media: [
+      { type: 'image', src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85', alt: 'MHD Agency Portal Showcase' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85', alt: 'Engineering services' },
+    ],
+  },
+  {
+    id: 'batal-autism-platform',
+    title: 'BATAL AUTISM CARE',
+    cover: 'https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=600&q=85',
+    position: { x: 10, y: 38 },
+    size: 92,
+    year: '2025',
+    language: 'React 18 / Vite / Tailwind / Framer Motion',
+    category: 'Autism Support Platform',
+    description: 'منصة بطل — Arabic autism-support platform: sensory activities, PECS picture exchange communication, interactive educational exercises, and parent support hub.',
+    link: 'https://github.com/khaledmazen437-lgtm/batal',
+    media: [
+      { type: 'image', src: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1200&q=85', alt: 'Autism care interactive exercises' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=1200&q=85', alt: 'Batal platform sensory hub' },
+    ],
+  },
+  {
+    id: 'anti-drone-system',
+    title: 'ANTI-DRONE DEFENSE',
+    cover: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=85',
+    position: { x: 38, y: 36 },
+    size: 88,
+    year: '2025',
+    language: 'Node.js / CSS3 / Real-Time UI',
+    category: 'Tactical Defense Telemetry',
+    description: 'Tactical drone detection & counter-UAV defense interface with 360-degree radar sweeps, RF signal spectrum analysis, target altitude logging, and instant perimeter intrusion alerts.',
+    link: 'https://github.com/khaledmazen437-lgtm/anti-drone',
+    media: [
+      { type: 'image', src: 'https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=1200&q=85', alt: 'Drone radar detection sweep' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85', alt: 'Tactical hardware system' },
+    ],
+  },
+  {
+    id: 'nexora-tech',
+    title: 'NEXORA DIGITAL TECH',
+    cover: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=85',
+    position: { x: 64, y: 38 },
+    size: 90,
+    year: '2025',
+    language: 'HTML5 / CSS3 / Animations',
+    category: 'Digital Agency Portal',
+    description: 'نيكسورا — Official web platform for Nexora Technology Solutions, presenting digital transformation offerings, high-impact enterprise landing sections, and modern branding.',
+    link: 'https://github.com/khaledmazen437-lgtm/Nexora',
+    demoLink: 'https://khaledmazen437-lgtm.github.io/Nexora/',
+    media: [
+      { type: 'image', src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=85', alt: 'Nexora digital agency platform' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=85', alt: 'Futuristic network visual' },
+    ],
+  },
+  {
+    id: 'mhd-todo-list',
+    title: 'MHD TODO & TASKS',
+    cover: 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=600&q=85',
+    position: { x: 88, y: 38 },
+    size: 88,
+    year: '2025',
+    language: 'JavaScript / Modern CSS',
+    category: 'Productivity Application',
+    description: 'تطبيق إدارة المهام الذكي والإنتاجية اليومية مع تصنيف الأولويات ومتابعة الإنجاز وحفظ البيانات محلياً.',
+    link: 'https://github.com/khaledmazen437-lgtm/mhd-todo-list',
+    media: [
+      { type: 'image', src: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1200&q=85', alt: 'Task management dashboard' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=1200&q=85', alt: 'Productivity sprint board' },
+    ],
+  },
+  {
+    id: 'omarsat-eagle-server',
+    title: 'OMARSAT EAGLE SERVER',
+    cover: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=85',
+    position: { x: 10, y: 64 },
+    size: 88,
+    year: '2025',
+    language: 'Python / Django / SQLite / API',
+    category: 'Server Engine & Store',
+    description: 'نظام وسيرفر إيجل مع محرك متجر إلكتروني مبني بإطار عمل Django بايثون، يشمل إدارة قواعد البيانات وخدمات الاتصال.',
+    link: 'https://github.com/khaledmazen437-lgtm/omarsat-eagle-server',
+    media: [
+      { type: 'image', src: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=85', alt: 'Server backend architecture' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=85', alt: 'Eagle server database log' },
+    ],
+  },
+  {
+    id: 'ghaith-physics-platform',
+    title: 'GHAITH PHYSICS PLATFORM',
+    cover: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=600&q=85',
+    position: { x: 38, y: 62 },
+    size: 86,
+    year: '2025',
+    language: 'HTML5 / CSS3 / JavaScript',
+    category: 'Educational Physics Portal',
+    description: 'منصة غيث التعليمية للفيزياء — شروحات تفاعلية، نماذج محاكاة فيزيائية، وبنك أسئلة واختبارات للطلاب.',
+    link: 'https://github.com/khaledmazen437-lgtm/ghaith-physics-platform',
+    demoLink: 'https://khaledmazen437-lgtm.github.io/ghaith/',
+    media: [
+      { type: 'image', src: 'https://images.unsplash.com/photo-1532629345422-7515f3d16bb9?auto=format&fit=crop&w=1200&q=85', alt: 'Physics education visual' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=85', alt: 'Ghaith physics platform' },
+    ],
+  },
+  {
+    id: 'coffee-mezo-landing',
+    title: 'COFFEE MEZO EXPERIENCE',
+    cover: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=85',
+    position: { x: 64, y: 64 },
+    size: 86,
+    year: '2025',
+    language: 'Modern CSS / HTML5 / JS',
+    category: 'Brand Landing Page',
+    description: 'صفحة هبوط تسويقية أنيقة لتجربة علامة القهوة الفاخرة مع مؤثرات بصرية وتصميم مريح للعين.',
+    link: 'https://github.com/khaledmazen437-lgtm/coffee-mezo-landing',
+    media: [
+      { type: 'image', src: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=85', alt: 'Coffee Mezo landing design' },
+    ],
+  },
+  {
+    id: 'resume-cv',
+    title: 'MAZEN KHALED CV',
+    cover: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=600&q=85',
+    position: { x: 88, y: 64 },
+    size: 88,
+    year: '2026',
+    language: 'PDF Document',
+    category: 'Official Curriculum Vitae',
+    description: 'Official Curriculum Vitae of Mazen Khaled — Software Engineer & Web Developer. Contains complete technical expertise, featured full-stack projects, and verified credentials.',
+    link: '/Mazen_Khaled_Resume.pdf',
+    media: [
+      { type: 'image', src: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=1200&q=85', alt: 'Resume document overview' },
+    ],
+  },
+];

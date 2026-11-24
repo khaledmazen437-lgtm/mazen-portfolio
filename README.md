@@ -1,26 +1,62 @@
-Mazen Khaled — Personal Portfolio
+# Mazen Khaled — Portfolio
 
-> البورتفوليو الشخصي بتاعي — نبذة عني، مهاراتي، مشاريعي، وطريقة التواصل معايا.
+My personal desktop-style portfolio built with React, TypeScript, Tailwind CSS, and Framer Motion. It emulates a macOS environment with draggable desktop icons, floating windows, traffic-light controls, a magnifying dock, and an interactive mobile grid.
 
-My personal portfolio site: hero, about, skills, featured projects and contact sections, plus a downloadable resume PDF.
+## Getting Started
 
-## Features
+Make sure you have Node.js 18+ installed.
 
-- Animated hero with magnetic-name effect and loader
-- About / skills / projects sections with scroll animations
-- CSS variables + separate animations stylesheet
-- PWA basics: `manifest.json` + service worker (`sw.js`)
-- Resume PDF included (`MAZEN_KHALED_FlowCV_Resume_*.pdf`)
+```bash
+# Install packages
+npm install
 
-## Tech Stack
+# Run development server
+npm run dev
 
-- Vanilla HTML/CSS/JS (`CSS/`, `JS/`)
-- No build step — fully static
+# Run type check
+npm run lint
 
-## Running
+# Build production bundle
+npm run build
+```
 
-Open `index.html`, or deploy the folder to any static host (GitHub Pages / Vercel / Netlify).
+The dev server will run locally at `http://localhost:5173`.
 
-## Notes
+## Adding or Editing Projects
 
-- Related repo `portofileOMATSAT` is a client variant of this same template.
+All project data lives in `src/data/projects.ts`.
+
+To add a project, append an object to the `projects` array:
+
+```ts
+{
+  id: 'my-project-slug',
+  title: 'PROJECT TITLE',
+  cover: '/projects/cover.jpg',
+  position: { x: 50, y: 50 }, // desktop coordinate in %
+  size: 90,
+  year: '2026',
+  language: 'TypeScript / React',
+  category: 'Web App',
+  description: 'What the project does and the problems it solves.',
+  link: 'https://github.com/khaledmazen437-lgtm/repo',
+  demoLink: 'https://example.com/demo',
+  media: [
+    { type: 'image', src: '/projects/screenshot1.jpg', alt: 'Screenshot 1' },
+    { type: 'image', src: '/projects/screenshot2.jpg', alt: 'Screenshot 2' },
+  ],
+}
+```
+
+Static media (images, videos, PDF resume) go in the `public/` directory.
+
+## Live Production Links
+
+The live applications deployed on `mhdteck.store`:
+- Dalil Study Platform: `https://mhdteck.store/dalil/`
+- MHD Fashion Store: `https://mhdteck.store/store/store.php`
+- MHD Agency Portal: `https://mhdteck.store/mhd/index.php`
+
+## License
+
+MIT
