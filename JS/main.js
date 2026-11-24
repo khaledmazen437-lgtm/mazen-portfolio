@@ -45,11 +45,10 @@ const skillsData = [
   { name: "Figma", icon: "devicon-figma-plain" }
 ];
 
-// Load Projects
 const projectsGrid = document.querySelector('.projects-grid');
 projectsData.forEach(project => {
   const techTags = project.tech.map(t => `<span class="tech-tag">${t}</span>`).join('');
-  
+
   const cardHTML = `
     <div class="project-card fade-in">
       <div class="project-img">
@@ -72,7 +71,6 @@ projectsData.forEach(project => {
   projectsGrid.innerHTML += cardHTML;
 });
 
-// Load Skills
 const skillsGrid = document.querySelector('.skills-grid');
 skillsData.forEach(skill => {
   const skillHTML = `
@@ -84,7 +82,6 @@ skillsData.forEach(skill => {
   skillsGrid.innerHTML += skillHTML;
 });
 
-// Adding scroll animation trigger 
 const fadeElements = document.querySelectorAll('.fade-in');
 
 const appearOptions = {
@@ -107,7 +104,7 @@ fadeElements.forEach(el => {
   appearOnScroll.observe(el);
 });
 
-// Advanced 3D Hover Effect for Cards 
+// Advanced 3D Hover Effect for Cards
 const cards = document.querySelectorAll('.skill-card, .project-card, .timeline-content, .floating-code-card'); // Included timeline and floating card
 
 cards.forEach(card => {
@@ -119,12 +116,11 @@ cards.forEach(card => {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    const rotateX = ((y - centerY) / centerY) * -10; 
+    const rotateX = ((y - centerY) / centerY) * -10;
     const rotateY = ((x - centerX) / centerX) * 10;
 
     card.style.transform = `perspective(1000px) scale(1.05) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    
-    // Compute Glare offset
+
     const glare = card.querySelector('.glare');
     if (glare) {
       let percentX = (x / rect.width) * 100;
@@ -146,23 +142,20 @@ cards.forEach(card => {
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent page reload
-    
+    e.preventDefault();
+
     const name = document.getElementById('contact-name').value;
     const email = document.getElementById('contact-email').value;
     const message = document.getElementById('contact-message').value;
-    
-    // Format the message for WhatsApp
-    const whatsappNumber = "201226935593"; 
+
+    const whatsappNumber = "201226935593";
     const text = `Hello Mazen,\nI'm ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
-    
-    // Open WhatsApp in a new tab
+
     window.open(url, '_blank');
   });
 }
 
-// Custom Cursor Magic
 const cursorDot = document.querySelector('.cursor-dot');
 const cursorOutline = document.querySelector('.cursor-outline');
 
@@ -173,20 +166,17 @@ window.addEventListener('mousemove', (e) => {
   cursorDot.style.left = `${posX}px`;
   cursorDot.style.top = `${posY}px`;
 
-  // Adding a slight delay to the outline for a smooth trailing effect
   cursorOutline.animate({
     left: `${posX}px`,
     top: `${posY}px`
   }, { duration: 500, fill: "forwards" });
 
-  // Add Fluid Trail Elements dynamically
   const trail = document.createElement('div');
   trail.className = 'mouse-trail';
   trail.style.left = `${posX}px`;
   trail.style.top = `${posY}px`;
   document.body.appendChild(trail);
-  
-  // Cleanup trail after animation
+
   setTimeout(() => {
     trail.remove();
   }, 800);
@@ -196,7 +186,6 @@ window.addEventListener('mousemove', (e) => {
 const newFadeElements = document.querySelectorAll('.fade-in');
 newFadeElements.forEach(el => appearOnScroll.observe(el));
 
-// Preloader Logic
 window.addEventListener('load', () => {
   const preloader = document.getElementById('preloader');
   if (preloader) {
@@ -207,7 +196,6 @@ window.addEventListener('load', () => {
   }
 });
 
-// Scroll Progress Bar
 window.addEventListener('scroll', () => {
   const scrollProgress = document.getElementById('scroll-progress');
   if (scrollProgress) {
@@ -218,7 +206,6 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Magnetic Buttons Physics
 const magneticElements = document.querySelectorAll('.magnetic');
 magneticElements.forEach(elem => {
   elem.addEventListener('mousemove', (e) => {
@@ -230,10 +217,10 @@ magneticElements.forEach(elem => {
     const yPull = y * 0.4;
     elem.style.transform = `translate(${xPull}px, ${yPull}px)`;
   });
-  
+
   elem.addEventListener('mouseleave', () => {
     elem.style.transform = `translate(0px, 0px)`;
-    // Apply a springy transition back
+
     elem.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
     setTimeout(() => {
        elem.style.transition = 'transform 0.1s linear';
@@ -241,7 +228,6 @@ magneticElements.forEach(elem => {
   });
 });
 
-// Spotlight tracking
 window.addEventListener('mousemove', (e) => {
   document.body.style.setProperty('--mouse-x', `${e.clientX}px`);
   document.body.style.setProperty('--mouse-y', `${e.clientY}px`);
@@ -264,7 +250,7 @@ const nameEl = document.getElementById('scramble-name');
 if(nameEl) {
   const spanEl = nameEl.querySelector('.highlight');
   const actualText = spanEl ? spanEl.innerText : "Mazen Khaled";
-  
+
   nameEl.addEventListener('mouseenter', () => scrambleText(spanEl || nameEl, actualText));
   setTimeout(() => scrambleText(spanEl || nameEl, actualText), 1500);
 }
@@ -276,13 +262,12 @@ function scrambleText(element, text) {
       if(index < iterations) return text[index];
       return scrambleChars[Math.floor(Math.random() * scrambleChars.length)];
     }).join('');
-    
+
     if(iterations >= text.length) clearInterval(interval);
     iterations += 1/3;
   }, 30);
 }
 
-// Custom Context Menu
 const contextMenu = document.getElementById('custom-context-menu');
 if(contextMenu) {
   window.addEventListener('contextmenu', (e) => {
@@ -316,22 +301,22 @@ if (matrixCanvas && mCtx) {
   };
   setupMatrix();
   window.addEventListener('resize', setupMatrix);
-  
+
   const mChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*".split('');
-  
+
   const drawMatrix = () => {
     if (!document.body.classList.contains('matrix-theme')) return;
-    
+
     mCtx.fillStyle = "rgba(0, 0, 0, 0.05)";
     mCtx.fillRect(0, 0, matrixWidth, matrixHeight);
-    
-    mCtx.fillStyle = "#0F0"; 
+
+    mCtx.fillStyle = "#0F0";
     mCtx.font = "15px monospace";
-    
+
     for(let i=0; i<mDrops.length; i++) {
       const text = mChars[Math.floor(Math.random() * mChars.length)];
       mCtx.fillText(text, i * 20, mDrops[i] * 20);
-      
+
       if(mDrops[i] * 20 > matrixHeight && Math.random() > 0.975) {
         mDrops[i] = 0;
       }
@@ -341,7 +326,6 @@ if (matrixCanvas && mCtx) {
   setInterval(drawMatrix, 35);
 }
 
-// 3. AI Chatbot Logic
 const botTrigger = document.getElementById('ai-bot-trigger');
 const botWindow = document.getElementById('ai-bot-window');
 const closeBot = document.getElementById('close-bot');
@@ -356,7 +340,7 @@ if(botTrigger && botWindow) {
   const respond = (msg) => {
     const botMsg = document.createElement('div');
     botMsg.className = 'bot-msg';
-    
+
     const lowerMsg = msg.toLowerCase();
     if(lowerMsg.includes('skill') || lowerMsg.includes('know')) {
       botMsg.innerText = "Mazen is an expert in modern frontend tech and is studying AI & ML at Tanta Uni!";
@@ -367,7 +351,7 @@ if(botTrigger && botWindow) {
     } else {
       botMsg.innerText = "I am a simple AI. Ask me about Mazen's skills, experience, or projects!";
     }
-    
+
     botChatArea.appendChild(botMsg);
     botChatArea.scrollTop = botChatArea.scrollHeight;
   };
@@ -383,31 +367,28 @@ if(botTrigger && botWindow) {
     botChatArea.scrollTop = botChatArea.scrollHeight;
     setTimeout(() => respond(text), 600);
   };
-  
+
   sendBotBtn.addEventListener('click', processUserMsg);
   botInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') processUserMsg(); });
 }
 
-// 4. PWA Registration
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('./sw.js').catch(() => {});
   });
 }
 
-// 5. Theme Switcher Logic
 const themeBtns = document.querySelectorAll('.theme-btn');
 themeBtns.forEach(btn => {
   btn.addEventListener('click', (e) => {
     const theme = e.target.dataset.theme;
-    document.body.className = ''; 
+    document.body.className = '';
     if(theme !== 'default') {
       document.body.classList.add(`${theme}-theme`);
     }
   });
 });
 
-// 6. Gravity Fall Easter Egg (Secret code: mazen)
 let secretCode = ['m', 'a', 'z', 'e', 'n'];
 let keyIndex = 0;
 window.addEventListener('keydown', (e) => {
@@ -415,7 +396,7 @@ window.addEventListener('keydown', (e) => {
     keyIndex++;
     if(keyIndex === secretCode.length) {
       document.body.classList.add('gravity-collapse');
-      keyIndex = 0; 
+      keyIndex = 0;
     }
   } else {
     keyIndex = 0;
@@ -424,10 +405,9 @@ window.addEventListener('keydown', (e) => {
 
 // ====== SENIOR DEV UPGRADES ====== //
 
-// 1. Recruiter DevTools Easter Egg & Tab Visibility
 console.log(
-  "%c🕵️‍♂️ I see you looking under the hood! \n%cIf you are inspecting my code, we should probably talk. \nContact me to build something amazing together.", 
-  "color: #0f0; font-size: 20px; font-weight: bold; background: #000; padding: 10px; border-radius: 5px;", 
+  "%c🕵️‍♂️ I see you looking under the hood! \n%cIf you are inspecting my code, we should probably talk. \nContact me to build something amazing together.",
+  "color: #0f0; font-size: 20px; font-weight: bold; background: #000; padding: 10px; border-radius: 5px;",
   "color: #fff; font-size: 14px; background: #222; padding: 5px; border-radius: 5px; margin-top: 5px;"
 );
 
@@ -435,7 +415,6 @@ let docTitle = document.title;
 window.addEventListener("blur", () => { document.title = "Come back! 😭 | " + docTitle; });
 window.addEventListener("focus", () => { document.title = docTitle; });
 
-// 2. Developer Terminal Logic
 const terminalTrigger = document.getElementById('terminal-trigger');
 const terminalWindow = document.getElementById('dev-terminal-window');
 const closeTerminal = document.getElementById('close-terminal');
@@ -448,7 +427,7 @@ if(terminalTrigger && terminalWindow) {
     if(!terminalWindow.classList.contains('hidden')) terminalInput.focus();
   });
   closeTerminal.addEventListener('click', () => terminalWindow.classList.add('hidden'));
-  
+
   const printToTerminal = (text, isCommand=false) => {
     const div = document.createElement('div');
     if(isCommand) {
@@ -459,14 +438,14 @@ if(terminalTrigger && terminalWindow) {
     terminalOutput.appendChild(div);
     terminalOutput.scrollTop = terminalOutput.scrollHeight;
   };
-  
+
   terminalInput.addEventListener('keypress', (e) => {
     if(e.key === 'Enter') {
       const cmd = terminalInput.value.trim().toLowerCase();
       if(!cmd) return;
       printToTerminal(cmd, true);
       terminalInput.value = '';
-      
+
       switch(cmd) {
         case 'help':
           printToTerminal('Available commands: help, whoami, clear, projects, download cv, matrix');
@@ -497,7 +476,6 @@ if(terminalTrigger && terminalWindow) {
   });
 }
 
-// 3. Cinematic Cypher Preloader & Mouse Explosions
 document.addEventListener("DOMContentLoaded", () => {
     // A. Cypher text decode on load
     const titleElement = document.querySelector('.logo-loader');
@@ -511,7 +489,7 @@ document.addEventListener("DOMContentLoaded", () => {
             count += Math.floor(Math.random() * 5) + 1;
             if(count > 100) count = 100;
             percentText.innerText = count + '%';
-            
+
             if(count === 100) {
                 clearInterval(interval);
                 setTimeout(() => {
@@ -519,7 +497,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     setTimeout(() => { preloaderWrapper.style.display = 'none'; }, 1000);
                 }, 400); // slight delay at 100%
             }
-        }, 20); // very fast counter
+        }, 20);
     }
 
     // B. Spotlight Toggle and Mouse Tracking
@@ -530,7 +508,7 @@ document.addEventListener("DOMContentLoaded", () => {
         spotlightToggle.addEventListener('click', () => {
             document.body.classList.toggle('spotlight-on');
         });
-        
+
         window.addEventListener('mousemove', (e) => {
             if(document.body.classList.contains('spotlight-on')) {
                 spotlightOverlay.style.background = `radial-gradient(circle at ${e.clientX}px ${e.clientY}px, transparent 30px, rgba(0,0,0,0.98) 180px)`;
@@ -545,17 +523,17 @@ document.addEventListener("DOMContentLoaded", () => {
             const rect = letter.getBoundingClientRect();
             const x = e.clientX - rect.left - rect.width / 2;
             const y = e.clientY - rect.top - rect.height / 2;
-            
+
             // push away from mouse
             const xPush = (x * -0.8);
             const yPush = (y * -1.5) - 10;
             const rotate = x * 1.5;
-            
+
             letter.style.transform = `translate(${xPush}px, ${yPush}px) rotate(${rotate}deg) scale(1.5)`;
             letter.style.color = '#fff';
             letter.style.zIndex = '100';
         });
-        
+
         letter.addEventListener('mouseout', () => {
             letter.style.transform = `translate(0px, 0px) rotate(0deg) scale(1)`;
             letter.style.color = '';

@@ -2,29 +2,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Poppins:wght@400;500;700&display=swap');
 
 :root {
-  /* Colors */
-  --bg-color: #0b0716;      /* Deep space dark */
+
+  --bg-color: #0b0716;
   --surface-color: #1a1130;  /* Slightly lighter for cards */
   --primary-glow: rgba(144, 61, 232, 0.4);
   --primary-neon: #a252ff;   /* The awesome neon purple from the videos */
   --secondary-glow: rgba(200, 100, 255, 0.4);
   --text-main: #ffffff;
   --text-dim: #a19bb0;
-  
-  /* Layout & Glassmorphism */
+
   --glass-bg: rgba(26, 17, 48, 0.6);
   --glass-border: rgba(255, 255, 255, 0.05);
-  
-  /* Fonts */
+
   --font-heading: 'Outfit', sans-serif;
   --font-text: 'Poppins', sans-serif;
-  
-  /* Transitions */
+
   --transition-fast: 0.3s ease;
   --transition-smooth: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Reset */
 * {
   margin: 0;
   padding: 0;

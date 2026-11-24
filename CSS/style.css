@@ -1,13 +1,10 @@
-/* ====== Main Styles ====== */
 @import url('./variables.css');
 
-/* Custom Flowing Scrollbar */
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg-color); }
 ::-webkit-scrollbar-thumb { background: var(--primary-neon); border-radius: 5px; }
 ::-webkit-scrollbar-thumb:hover { background: #fff; }
 
-/* ====== Navbar ====== */
 header {
   position: fixed;
   top: 0;
@@ -76,7 +73,6 @@ nav ul li a:hover::after {
   left: 0;
 }
 
-/* ====== Container & Sections ====== */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -104,7 +100,6 @@ section {
   color: var(--primary-neon);
 }
 
-/* ====== Hero Section ====== */
 .hero {
   display: flex !important;
   flex-direction: row;
@@ -305,7 +300,6 @@ section {
   100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
 }
 
-/* ====== About Section ====== */
 .about-content {
   display: flex;
   gap: 50px;
@@ -366,7 +360,6 @@ section {
   letter-spacing: 1px;
 }
 
-/* ====== Skills Section ====== */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -432,7 +425,6 @@ section {
   letter-spacing: 1px;
 }
 
-/* ====== Projects Section ====== */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -443,7 +435,7 @@ section {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   border-radius: 20px;
-  backdrop-filter: blur(25px); /* Increased blur */
+  backdrop-filter: blur(25px);
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform-style: preserve-3d;
   position: relative;
@@ -461,7 +453,7 @@ section {
 }
 
 .project-card:hover {
-  transform: translateY(-15px) scale(1.06); /* Aggressive zoom */
+  transform: translateY(-15px) scale(1.06);
   box-shadow: 0 25px 60px rgba(162, 82, 255, 0.4);
   border-color: var(--primary-neon);
 }
@@ -473,7 +465,7 @@ section {
 .project-img {
   width: 100%;
   height: 200px;
-  background: #2a1f43; 
+  background: #2a1f43;
   overflow: hidden;
   position: relative;
   border-radius: 20px 20px 0 0;
@@ -564,7 +556,6 @@ section {
   transform: scale(1.1);
 }
 
-/* ====== Contact Section ====== */
 .contact-container {
   display: flex;
   gap: 50px;
@@ -611,7 +602,7 @@ section {
 .input-group {
   position: relative;
 }
-.input-group input, 
+.input-group input,
 .input-group textarea {
   width: 100%;
   background: rgba(255,255,255,0.02);
@@ -634,7 +625,6 @@ section {
   background: rgba(255,255,255,0.05);
 }
 
-/* Footer */
 footer {
   position: relative;
   overflow: hidden;
@@ -678,7 +668,6 @@ footer {
   box-shadow: 0 5px 15px var(--primary-glow);
 }
 
-/* Animations Keyframes */
 @keyframes typing {
   from { width: 0 }
   to { width: 100% }
@@ -688,7 +677,6 @@ footer {
   50% { border-color: var(--primary-neon); }
 }
 
-/* ====== Experience Timeline ====== */
 .timeline {
   position: relative;
   max-width: 800px;
@@ -744,7 +732,6 @@ footer {
 .timeline-content h4 { color: var(--primary-neon); font-size: 1rem; margin-bottom: 15px; font-weight: 500; }
 .timeline-content p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.5; }
 
-/* ====== Custom Cursor ====== */
 .cursor-dot {
   width: 8px;
   height: 8px;
@@ -772,8 +759,7 @@ footer {
 }
 body:hover .cursor-dot, body:hover .cursor-outline { opacity: 1; }
 
-/* Make cursor larger when hovering over buttons/links */
-a:hover ~ .cursor-outline, 
+a:hover ~ .cursor-outline,
 button:hover ~ .cursor-outline,
 .project-card:hover ~ .cursor-outline {
   width: 60px; height: 60px;
@@ -788,21 +774,17 @@ button:hover ~ .cursor-outline,
   .contact-container, .about-content { flex-direction: column; padding: 30px; }
   header { padding: 15px 20px; }
   nav ul { display: none; }
-  
-  /* Timeline Responsive */
+
   .timeline::after { left: 31px; }
   .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
   .timeline-item:nth-child(even) { left: 0%; }
   .timeline-item::after { left: 21px; }
   .timeline-item:nth-child(even)::after { left: 21px; }
-  
-  /* Hide custom cursor on mobile */
+
   .cursor-dot, .cursor-outline { display: none !important; }
 }
 
-/* ================================= */
 /* Extra Ultra-Premium Enhancements */
-/* ================================= */
 
 #preloader-wrapper {
   position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
@@ -836,7 +818,6 @@ button:hover ~ .cursor-outline,
   transition: transform 0.1s linear;
 }
 
-/* Spotlight Global Tracker */
 body::before {
   content: '';
   position: fixed;
@@ -846,7 +827,6 @@ body::before {
   z-index: 1;
 }
 
-/* Availability Badge */
 .availability-badge {
   display: inline-flex; align-items: center; gap: 10px;
   background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border);
@@ -860,7 +840,6 @@ body::before {
 }
 @keyframes pulse-green { 0% { box-shadow: 0 0 0 0 rgba(39, 201, 63, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(39, 201, 63, 0); } 100% { box-shadow: 0 0 0 0 rgba(39, 201, 63, 0); } }
 
-/* Context Menu HTML */
 #custom-context-menu {
   position: fixed;
   background: var(--glass-bg);
@@ -893,7 +872,6 @@ body::before {
   color: var(--primary-neon);
 }
 
-/* Themes */
 body.matrix-theme {
   --primary-neon: #0f0;
   --bg-color: #000;
@@ -911,7 +889,6 @@ body.matrix-theme #particles-canvas { display: none; }
 body.matrix-theme #matrix-canvas { opacity: 1 !important; }
 body.matrix-theme .bg-glow { display: none !important; }
 
-/* Marquee */
 .marquee-container {
   width: 100vw; margin-left: -50vw; left: 50%; position: relative;
   border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);
@@ -924,7 +901,6 @@ body.matrix-theme .bg-glow { display: none !important; }
 }
 @keyframes scroll-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-/* OS Controls */
 #os-controls {
   position: fixed; top: 20px; right: 20px; display: flex; gap: 15px; z-index: 100000;
 }
@@ -942,7 +918,6 @@ body.matrix-theme .bg-glow { display: none !important; }
 .theme-btn { padding: 8px 15px; cursor: pointer; border-radius: 5px; transition: 0.2s; font-size: 0.85rem;}
 .theme-btn:hover { background: rgba(255,255,255,0.1); color: var(--primary-neon); }
 
-/* AI Bot */
 #ai-bot-trigger {
   position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
   background: var(--primary-neon); border-radius: 50%; display: flex; justify-content: center; align-items: center;
@@ -971,7 +946,6 @@ body.gravity-collapse * {
 }
 body.gravity-collapse { overflow: hidden; }
 
-/* Mouse Fluid Trail */
 .mouse-trail {
   position: fixed;
   width: 8px;
@@ -989,7 +963,6 @@ body.gravity-collapse { overflow: hidden; }
   100% { opacity: 0; transform: translate(-50%, -50%) scale(0.2); }
 }
 
-/* Developer Terminal */
 #dev-terminal-window {
   position: fixed; bottom: 100px; left: 30px; width: 450px; background: rgba(0, 0, 0, 0.9);
   border: 1px solid var(--primary-neon); border-radius: 8px; z-index: 100000;
@@ -1025,7 +998,6 @@ body.matrix-theme .user-msg { background: #0f0 !important; color: #000 !importan
 body.matrix-theme .loader-sub { text-shadow: 0 0 10px #0f0 !important; }
 body.matrix-theme .mouse-trail { background: #0f0 !important; box-shadow: 0 0 10px #0f0 !important; }
 
-/* Preloader Upgrades */
 .loader-content { text-align: center; display: flex; flex-direction: column; align-items: center; }
 .loader-sub { animation: glow-pulse 1.5s infinite alternate; }
 @keyframes glow-pulse {
@@ -1033,7 +1005,6 @@ body.matrix-theme .mouse-trail { background: #0f0 !important; box-shadow: 0 0 10
   100% { text-shadow: 0 0 20px var(--primary-neon), 0 0 30px var(--primary-neon); opacity: 1; transform: scale(1.05); }
 }
 
-/* Mouse Click Explosion */
 .click-explosion {
   position: fixed; width: 0; height: 0;
   border-radius: 50%; opacity: 1; z-index: 9999;
@@ -1047,7 +1018,6 @@ body.matrix-theme .mouse-trail { background: #0f0 !important; box-shadow: 0 0 10
   100% { width: 150px; height: 150px; opacity: 0; border: 2px solid var(--primary-neon); }
 }
 
-/* Spotlight Mode Overlay */
 #spotlight-overlay {
   position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
   background: rgba(0,0,0,0);
@@ -1060,21 +1030,17 @@ body.spotlight-on #spotlight-overlay { opacity: 1; }
 .mag-letter { display: inline-block; padding: 0 1px; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s; }
 .mag-letter:hover { color: var(--primary-neon); }
 
-/* ================================= */
-/* MOBILE RESPONSIVE ENGINE */
-/* ================================= */
-
 @media (max-width: 992px) {
   body { overflow-x: hidden; }
   .hero { flex-direction: column; text-align: center; gap: 30px; margin-top: 60px; padding-top: 20px; }
   .hero-content { align-items: center; width: 100%; }
   .hero-content h1 { font-size: 3rem; justify-content: center; flex-wrap: wrap; }
   .btn-group { justify-content: center; }
-  
+
   .hero-image { max-width: 100%; margin: 0 auto; }
   .image-wrapper { width: 70vw; max-width: 300px; height: 70vw; max-height: 300px; margin: 0 auto; }
   .hero-image::after { display: none; }
-  .floating-code-card { display: none; } /* Hide absolute overlapping card on mobile */
+  .floating-code-card { display: none; }
 
   .projects-grid, .skills-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
   header nav ul { display: none; }
@@ -1083,7 +1049,7 @@ body.spotlight-on #spotlight-overlay { opacity: 1; }
 @media (max-width: 768px) {
   .projects-grid, .skills-grid { grid-template-columns: 1fr; }
   .section-title { font-size: 2.2rem; }
-  
+
   /* Fix Terminal for mobile */
   #dev-terminal-window {
     width: 90vw; left: 5vw; bottom: 85px; z-index: 100000; height: 350px;
@@ -1095,17 +1061,15 @@ body.spotlight-on #spotlight-overlay { opacity: 1; }
     width: 90vw; right: 5vw; bottom: 85px; height: 400px;
   }
   .bot-chat { height: 280px; }
-  
+
   /* Global Float controls adjustments */
   #os-controls { left: 15px; bottom: 15px; gap: 10px; }
   #os-controls .magnetic { width: 45px; height: 45px; font-size: 1rem; }
   #ai-bot-trigger { right: 15px; bottom: 15px; width: 45px; height: 45px; font-size: 1rem; }
-  
-  /* Preloader fixes */
+
   .logo-loader { font-size: 1.8rem; letter-spacing: 2px; }
   #loader-percent { font-size: 3rem; }
-  
-  /* Timeline Resizing */
+
   .timeline::before { left: 10px; }
   .timeline-item { width: 100%; padding-left: 40px; padding-right: 0; }
   .timeline-item::after { left: 0; }
