@@ -74,7 +74,7 @@ export function Desktop() {
           ref={wallpaperRef}
           className="absolute inset-0 wallpaper-blur"
           style={{
-            backgroundImage: 'url(/wallpaper.jpg)',
+            backgroundImage: 'url("./wallpaper.jpg")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             transition: reduced ? 'none' : 'transform 0.08s linear',

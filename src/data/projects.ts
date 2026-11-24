@@ -29,14 +29,14 @@ export const projects: Project[] = [
     demoLink: 'https://mhdteck.store/mhd/index.php',
     media: [
       { type: 'image', src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85', alt: 'Dalil Study Platform Live' },
-      { type: 'image', src: '/1.jpg', alt: 'MHD Fashion Store Live' },
+      { type: 'image', src: './1.jpg', alt: 'MHD Fashion Store Live' },
       { type: 'image', src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85', alt: 'MHD Agency Portal Live' },
     ],
   },
   {
     id: 'mhd-fashion-store',
     title: 'MHD FASHION STORE',
-    cover: '/1.jpg',
+    cover: './1.jpg',
     position: { x: 34, y: 10 },
     size: 94,
     year: '2025',
@@ -46,7 +46,7 @@ export const projects: Project[] = [
     link: 'https://github.com/khaledmazen437-lgtm/mhd-fashion-store',
     demoLink: 'https://mhdteck.store/store/store.php',
     media: [
-      { type: 'image', src: '/1.jpg', alt: 'MHD Fashion Storefront' },
+      { type: 'image', src: './1.jpg', alt: 'MHD Fashion Storefront' },
       { type: 'image', src: 'https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1200&q=85', alt: 'Checkout & cart flow' },
     ],
   },
@@ -207,7 +207,7 @@ export const projects: Project[] = [
     language: 'PDF Document',
     category: 'Official Curriculum Vitae',
     description: 'Official Curriculum Vitae of Mazen Khaled — Software Engineer & Web Developer. Contains complete technical expertise, featured full-stack projects, and verified credentials.',
-    link: '/Mazen_Khaled_Resume.pdf',
+    link: './Mazen_Khaled_Resume.pdf',
     media: [
       { type: 'image', src: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=1200&q=85', alt: 'Resume document overview' },
     ],

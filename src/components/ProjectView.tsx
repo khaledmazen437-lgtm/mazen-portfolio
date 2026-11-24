@@ -172,7 +172,7 @@ function AboutContent() {
         </a>
 
         <a
-          href="/Mazen_Khaled_Resume.pdf"
+          href="./Mazen_Khaled_Resume.pdf"
           download="Mazen_Khaled_Resume.pdf"
           className="flex items-center gap-3 p-3 rounded-xl bg-blue-50 border border-blue-200/80 hover:bg-blue-100 transition-colors sm:col-span-2"
         >
@@ -285,14 +285,14 @@ function ResumeContent() {
         </div>
         <div className="flex items-center gap-2">
           <a
-            href="/Mazen_Khaled_Resume.pdf"
+            href="./Mazen_Khaled_Resume.pdf"
             download="Mazen_Khaled_Resume.pdf"
             className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-blue-600 text-white text-xs font-bold hover:bg-blue-700 transition-colors shadow-sm"
           >
             <span>Download PDF</span>
           </a>
           <a
-            href="/Mazen_Khaled_Resume.pdf"
+            href="./Mazen_Khaled_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-neutral-200/80 text-neutral-800 text-xs font-bold hover:bg-neutral-300 transition-colors"
@@ -303,7 +303,7 @@ function ResumeContent() {
       </div>
       <div className="w-full flex-1 min-h-[520px] rounded-xl overflow-hidden border border-neutral-200/80 bg-neutral-50 shadow-inner">
         <iframe
-          src="/Mazen_Khaled_Resume.pdf#toolbar=1"
+          src="./Mazen_Khaled_Resume.pdf#toolbar=1"
           title="Mazen Khaled Resume PDF"
           className="w-full h-full min-h-[520px] border-none"
         />
@@ -328,7 +328,7 @@ function ProductionContent() {
       url: 'https://mhdteck.store/store/store.php',
       github: 'https://github.com/khaledmazen437-lgtm/mhd-fashion-store',
       desc: 'المتجر الإلكتروني العصري للأزياء والملابس مع سلة تسوق تفاعلية وفلترة وتجربة مستخدم شراء متكاملة.',
-      image: '/1.jpg',
+      image: './1.jpg',
     },
     {
       title: 'MHD AGENCY TECH PORTAL',
